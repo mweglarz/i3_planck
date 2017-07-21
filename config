@@ -214,6 +214,12 @@ assign [class="^Evolution$"] $workspace10
 assign [class="^Slack$"] $workspace4
 assign [class="^Mattermost$"] $workspace4
 for_window [class="^Xfce4-appfinder$"] floating enable
+for_window [class="^Shutter$"] floating enable
+assign [class="UE4Editor"] $workspace7
+for_window [class="UE4Editor"] floating enable
+for_window [class="UE4Editor"] move to workspace $workspace7 
+assign [class="^QtCreator$"] $workspace8
+for_window [class="Thunar"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -267,9 +273,16 @@ exec --no-startup-id evolution
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
-exec_always --no-startup-id conky -c /home/marcin/.conky/marcin/manjaro_i3_green 
-exec_always --no-startup-id cd /home/marcin/.conky/marcin/alexbelConky/conky && ./starter.rb
-exec_always --no-startup-id cd /home/marcin/.conky/marcin/weather && conky -c weather.conf
+
+exec --no-startup-id conky -c /home/marcin/.conky/marcin/manjaro_i3_green 
+exec --no-startup-id cd /home/marcin/.conky/marcin/alexbelConky/conky && ./starter.rb
+exec --no-startup-id cd /home/marcin/.conky/marcin/weather && conky -c weather.conf
+exec --no-startup-id conky -c /home/marcin/.conky/marcin/gpu.conf
+
+exec --no-startup-id conky -c /home/marcin/.conky/marcin/manjaro_i3_green -x -1895
+exec --no-startup-id cd /home/marcin/.conky/marcin/alexbelConky/conky && ./starter_mirror.rb
+exec --no-startup-id cd /home/marcin/.conky/marcin/weather && conky -c weather.conf -x 1970
+exec --no-startup-id conky -c /home/marcin/.conky/marcin/gpu.conf -x -1895
 
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
 # Wallpaper
