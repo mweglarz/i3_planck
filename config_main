@@ -263,7 +263,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle # mute sound
 
-# focus_follows_mouse no
+# Mouse settings
+focus_follows_mouse no
+mouse_warping none
 
 # Startup applications
 # exec --no-startup-id spotify
