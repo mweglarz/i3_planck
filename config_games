@@ -44,9 +44,9 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+space exec dmenu_run
 # bindsym Ctrl+space exec dmenu_run
 
-bindsym $mod+space exec rofi -show run -lines 6
+bindsym $mod+r exec rofi -show run -lines 6
 #bindsym Ctrl+space exec rofi -show run -lines 6
-bindsym Ctrl+$mod+space exec xfce4-appfinder
+bindsym Ctrl+Mod1+space exec xfce4-appfinder
 
 # task switcher - rofi
 bindsym Mod1+Tab \

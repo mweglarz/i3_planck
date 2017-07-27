@@ -12,7 +12,7 @@
 # Alt = Mod1
 # Super = Mod4
 
-set $mod Mod1
+set $mod Mod4
 set $mod2 Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -44,9 +44,9 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+space exec dmenu_run
 # bindsym Ctrl+space exec dmenu_run
 
-bindsym $mod+space exec rofi -show run -lines 6
-bindsym Ctrl+space exec rofi -show run -lines 6
-bindsym Ctrl+$mod+space exec xfce4-appfinder
+bindsym $mod+r exec rofi -show run -lines 6
+#bindsym Ctrl+space exec rofi -show run -lines 6
+bindsym Ctrl+Mod1+space exec xfce4-appfinder
 
 # task switcher - rofi
 bindsym Mod1+Tab \
@@ -183,10 +183,10 @@ bindsym Ctrl+8 workspace $workRight4
 bindsym Ctrl+9 workspace $workRight5
 
 # move focused container to workspace
-bindsym Ctrl+$mod2+1 move container to workspace $workspace1
-bindsym Ctrl+$mod2+2 move container to workspace $workspace2
-bindsym Ctrl+$mod2+3 move container to workspace $workspace3
-bindsym Ctrl+$mod2+4 move container to workspace $workspace4
+#bindsym Ctrl+$mod2+1 move container to workspace $workspace1
+#bindsym Ctrl+$mod2+2 move container to workspace $workspace2
+#bindsym Ctrl+$mod2+3 move container to workspace $workspace3
+#bindsym Ctrl+$mod2+4 move container to workspace $workspace4
 # bindsym Ctrl+Shift+5 move container to workspace $workspace5
 # bindsym Ctrl+Shift+6 move container to workspace $workspace6
 bindsym Ctrl+Shift+1 move container to workspace $workspace7
@@ -194,11 +194,11 @@ bindsym Ctrl+Shift+2 move container to workspace $workspace8
 bindsym Ctrl+Shift+3 move container to workspace $workspace9
 bindsym Ctrl+Shift+4 move container to workspace $workspace10
 
-bindsym Ctrl+$mod2+5 move container to workspace $workLeft1
-bindsym Ctrl+$mod2+6 move container to workspace $workLeft2
-bindsym Ctrl+$mod2+7 move container to workspace $workLeft3
-bindsym Ctrl+$mod2+8 move container to workspace $workLeft4
-bindsym Ctrl+$mod2+9 move container to workspace $workLeft5
+#bindsym Ctrl+$mod2+5 move container to workspace $workLeft1
+#bindsym Ctrl+$mod2+6 move container to workspace $workLeft2
+#bindsym Ctrl+$mod2+7 move container to workspace $workLeft3
+#bindsym Ctrl+$mod2+8 move container to workspace $workLeft4
+#bindsym Ctrl+$mod2+9 move container to workspace $workLeft5
 bindsym Ctrl+Shift+5 move container to workspace $workRight1
 bindsym Ctrl+Shift+6 move container to workspace $workRight2
 bindsym Ctrl+Shift+7 move container to workspace $workRight3
@@ -209,38 +209,17 @@ bindsym --whole-window button8 workspace next_on_output
 bindsym --whole-window button9 workspace prev_on_output
 
 # xprop to get class name
-# Microsoft Ergonomic Sculpt extra keys
-# F1 - XF86HomePage
-# F2 - Super_L + Tab
-# F3 - Control_L + Super_L + Left
-# F4 - Control_L + Super_L + Right
-# F5 - Shift_L + Super_L + XF86TouchpadToggle
-# F6 - Alt_L + Super_L + XF86TouchpadToggle
-# F7 - Control_L + Super_L + XF86TouchpadToggle
-# F8 - Super_L + XF86TouchpadToggle
-
-for_window [class="^Spotify$"] move scratchpad
-bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
-
-assign [class="^Evolution$"] $workRight1
-# for_window [class="^Evolution$"] move scratchpad
-# bindsym Ctrl+Mod4+XF86TouchpadToggle [class="Evolution"] scratchpad show
-
-# assign [class="^Slack$"] $workspace4
-for_window [class="^Slack$"] move scratchpad
-bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
-
-# assign [class="^Mattermost$"] $workspace4
-for_window [class="^Mattermost$"] move scratchpad
-bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
-
+for_window [class="^Spotify$"] move to workspace $workLeft1
+assign [class="^Evolution$"] $workspace10
+assign [class="^Slack$"] $workspace4
+assign [class="^Mattermost$"] $workspace4
 for_window [class="^Xfce4-appfinder$"] floating enable
 for_window [class="^Shutter$"] floating enable
 assign [class="UE4Editor"] $workspace7
-for_window [class="UE4Editor"] layout tabbed
+for_window [class="UE4Editor"] floating enable
 for_window [class="UE4Editor"] move to workspace $workspace7 
 assign [class="^QtCreator$"] $workspace8
-# for_window [class="Thunar"] floating enable
+for_window [class="Thunar"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -288,8 +267,6 @@ bindsym XF86AudioPrev exec playerctl previous
 focus_follows_mouse no
 mouse_warping none
 
-exec --no-startup-id xrandr --output HDMI-0 --primary
-
 # Startup applications
 # exec --no-startup-id spotify
 # exec --no-startup-id slack
@@ -300,8 +277,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 
-exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
-exec --no-startup-id . /home/marcin/bin/mw_start_conky_right.sh
+exec --no-startup-id mw_start_conky.sh
+exec --no-startup-id mw_start_conky_right.sh
 
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
 # Wallpaper
