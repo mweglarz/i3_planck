@@ -220,19 +220,19 @@ bindsym --whole-window button9 workspace prev_on_output
 # F8 - Super_L + XF86TouchpadToggle
 
 for_window [class="^Spotify$"] move scratchpad
-bindsym Super_L+XF86TouchpadToggle [class="Spotify"] scratchpad show
+bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
 
-# assign [class="^Evolution$"] $workRight1
-for_window [class="^Evolution$"] move scratchpad
-bindsym Control_L+Super_L+XF86TouchpadToggle [class="Evolution"] scratchpad show
+assign [class="^Evolution$"] $workRight1
+# for_window [class="^Evolution$"] move scratchpad
+# bindsym Ctrl+Mod4+XF86TouchpadToggle [class="Evolution"] scratchpad show
 
 # assign [class="^Slack$"] $workspace4
 for_window [class="^Slack$"] move scratchpad
-bindsym Alt_L+Super_L+XF86TouchpadToggle [class="Slack"] scratchpad show
+bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
 
 # assign [class="^Mattermost$"] $workspace4
 for_window [class="^Mattermost$"] move scratchpad
-bindsym Shift_L+Super_L+XF86TouchpadToggle [class="Mattermost"] scratchpad show
+bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
 
 for_window [class="^Xfce4-appfinder$"] floating enable
 for_window [class="^Shutter$"] floating enable
