@@ -209,17 +209,31 @@ bindsym --whole-window button8 workspace next_on_output
 bindsym --whole-window button9 workspace prev_on_output
 
 # xprop to get class name
-for_window [class="^Spotify$"] move to workspace $workLeft1
-assign [class="^Evolution$"] $workspace10
+# Microsoft Ergonomic Sculpt extra keys
+# F1 - XF86HomePage
+# F2 - Super_L + Tab
+# F3 - Control_L + Super_L + Left
+# F4 - Control_L + Super_L + Right
+# F5 - Shift_L + Super_L + XF86TouchpadToggle
+# F6 - Alt_L + Super_L + XF86TouchpadToggle
+# F7 - Control_L + Super_L + XF86TouchpadToggle
+# F8 - Super_L + XF86TouchpadToggle
+
+# for_window [class="^Spotify$"] move to workspace $workLeft1
+bindsym XF86HomePage [class="^Spotify$"] scratchpad show
+
+
+assign [class="^Evolution$"] $workRight1
 assign [class="^Slack$"] $workspace4
 assign [class="^Mattermost$"] $workspace4
+
 for_window [class="^Xfce4-appfinder$"] floating enable
 for_window [class="^Shutter$"] floating enable
 assign [class="UE4Editor"] $workspace7
-for_window [class="UE4Editor"] floating enable
+for_window [class="UE4Editor"] layout tabbed
 for_window [class="UE4Editor"] move to workspace $workspace7 
 assign [class="^QtCreator$"] $workspace8
-for_window [class="Thunar"] floating enable
+# for_window [class="Thunar"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -267,17 +281,20 @@ bindsym XF86AudioPrev exec playerctl previous
 focus_follows_mouse no
 mouse_warping none
 
+exec --no-startup-id xrandr --output HDMI-0 --primary
+
 # Startup applications
 # exec --no-startup-id spotify
-exec --no-startup-id slack
-exec --no-startup-id mattermost-desktop
+# exec --no-startup-id slack
+# exec --no-startup-id mattermost-desktop
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id evolution
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 
-exec --no-startup-id mw_start_conky.sh
-exec --no-startup-id mw_start_conky_right.sh
+exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
+exec --no-startup-id . /home/marcin/bin/mw_start_conky_right.sh
 
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
 # Wallpaper
