@@ -105,13 +105,13 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym Shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 set $workspace1 "1L"
 set $workspace2 "2L"
@@ -219,8 +219,16 @@ bindsym --whole-window button9 workspace prev_on_output
 # F7 - Control_L + Super_L + XF86TouchpadToggle
 # F8 - Super_L + XF86TouchpadToggle
 
+for_window [class="^GitKraken$"] move scratchpad
+# bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show, resize set 1900 1100
+# apple keyboard f15
+bindsym XF86Launch6 [class="^GitKraken$"] scratchpad show, resize set 1900 1100
+
+
 for_window [class="^Spotify$"] move scratchpad
-bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
+# bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
+# apple keyboard f16
+bindsym XF86Launch7 [class="Spotify"] scratchpad show, resize set 1900 1100
 
 assign [class="^Evolution$"] $workRight1
 # for_window [class="^Evolution$"] move scratchpad
@@ -228,11 +236,15 @@ assign [class="^Evolution$"] $workRight1
 
 # assign [class="^Slack$"] $workspace4
 for_window [class="^Slack$"] move scratchpad
-bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
+# bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
+# apple keyboard f14
+bindsym XF86Launch5 [class="Slack"] scratchpad show, resize set 1900 1100
 
 # assign [class="^Mattermost$"] $workspace4
 for_window [class="^Mattermost$"] move scratchpad
-bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
+# bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
+# apple keyboard f13
+bindsym XF86Tools [class="Mattermost"] scratchpad show, resize set 1900 1100
 
 for_window [class="^Xfce4-appfinder$"] floating enable
 for_window [class="^Shutter$"] floating enable
@@ -294,7 +306,8 @@ exec --no-startup-id xrandr --output HDMI-0 --primary
 # exec --no-startup-id spotify
 # exec --no-startup-id slack
 # exec --no-startup-id mattermost-desktop
-exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id ssh-agent
+# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id evolution
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
@@ -303,7 +316,7 @@ exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 exec --no-startup-id . /home/marcin/bin/mw_start_conky_right.sh
 
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
+exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/manjaro_mountain.png
 
