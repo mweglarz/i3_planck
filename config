@@ -113,6 +113,9 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+d focus child
 
+# border
+new_window normal 6
+
 set $workspace1 "1L"
 set $workspace2 "2L"
 set $workspace3 "3L"
@@ -222,13 +225,17 @@ bindsym --whole-window button9 workspace prev_on_output
 for_window [class="^GitKraken$"] move scratchpad
 # bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 # apple keyboard f15
-bindsym XF86Launch6 [class="^GitKraken$"] scratchpad show, resize set 1900 1100
+# bindsym XF86Launch6 [class="^GitKraken$"] scratchpad show, resize set 1900 1100
+# genius keyboard search
+bindsym XF86Search [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 
 
 for_window [class="^Spotify$"] move scratchpad
 # bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
 # apple keyboard f16
-bindsym XF86Launch7 [class="Spotify"] scratchpad show, resize set 1900 1100
+# bindsym XF86Launch7 [class="Spotify"] scratchpad show, resize set 1900 1100
+# genius keyboard homepage (glob)
+bindsym XF86HomePage [class="Spotify"] scratchpad show, resize set 1900 1100
 
 assign [class="^Evolution$"] $workRight1
 # for_window [class="^Evolution$"] move scratchpad
@@ -238,7 +245,9 @@ assign [class="^Evolution$"] $workRight1
 for_window [class="^Slack$"] move scratchpad
 # bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
 # apple keyboard f14
-bindsym XF86Launch5 [class="Slack"] scratchpad show, resize set 1900 1100
+# bindsym XF86Launch5 [class="Slack"] scratchpad show, resize set 1900 1100
+# genius keyboard mail 
+bindsym XF86Mail [class="Slack"] scratchpad show, resize set 1900 1100
 
 # assign [class="^Mattermost$"] $workspace4
 for_window [class="^Mattermost$"] move scratchpad
@@ -260,7 +269,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Ctrl+l exec i3lock -d -c 000000
+bindsym $mod+Ctrl+l exec /home/marcin/bin/mw_lock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
