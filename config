@@ -45,7 +45,7 @@ bindsym $mod+Shift+q kill
 # bindsym Ctrl+space exec dmenu_run
 
 bindsym $mod+space exec rofi -show run -lines 6
-bindsym Ctrl+space exec rofi -show run -lines 6
+# bindsym Ctrl+space exec rofi -show run -lines 6
 bindsym Ctrl+$mod+space exec xfce4-appfinder
 
 # task switcher - rofi
@@ -64,10 +64,10 @@ bindsym Mod1+Tab \
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -76,10 +76,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -88,7 +88,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+semicolon split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -105,7 +105,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym Shift+space focus mode_toggle
+bindsym Shift+space+f focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -145,7 +145,6 @@ workspace $workspace4 output DP-0
 # workspace $workspace5 output DP-0
 
 workspace $workLeft1 output DP-0
-workspace $workLeft2 output DP-0
 workspace $workLeft3 output DP-0
 workspace $workLeft4 output DP-0
 workspace $workLeft5 output DP-0
@@ -222,20 +221,30 @@ bindsym --whole-window button9 workspace prev_on_output
 # F7 - Control_L + Super_L + XF86TouchpadToggle
 # F8 - Super_L + XF86TouchpadToggle
 
+# SCRATCHPAD
+# quick terminal
+exec --no-startup-id terminator --title="quick"
+for_window [title="quick"] floating enable
+for_window [title="quick"] move scratchpad
+bindsym XF86HomePage [title="^quick"] scratchpad show, resize set 1900 1100
+bindsym Ctrl+F8 exec --no-startup-id terminator --title="quick"
+
+for_window [class="^Steam"] move scratchpad
+
 for_window [class="^GitKraken$"] move scratchpad
-# bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show, resize set 1900 1100
+bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 # apple keyboard f15
 # bindsym XF86Launch6 [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 # genius keyboard search
-bindsym XF86Search [class="^GitKraken$"] scratchpad show, resize set 1900 1100
+# bindsym XF86Search [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 
 
 for_window [class="^Spotify$"] move scratchpad
-# bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
+bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
 # apple keyboard f16
 # bindsym XF86Launch7 [class="Spotify"] scratchpad show, resize set 1900 1100
 # genius keyboard homepage (glob)
-bindsym XF86HomePage [class="Spotify"] scratchpad show, resize set 1900 1100
+# bindsym XF86HomePage [class="Spotify"] scratchpad show, resize set 1900 1100
 
 assign [class="^Evolution$"] $workRight1
 # for_window [class="^Evolution$"] move scratchpad
@@ -243,17 +252,42 @@ assign [class="^Evolution$"] $workRight1
 
 # assign [class="^Slack$"] $workspace4
 for_window [class="^Slack$"] move scratchpad
-# bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
+bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
 # apple keyboard f14
 # bindsym XF86Launch5 [class="Slack"] scratchpad show, resize set 1900 1100
 # genius keyboard mail 
-bindsym XF86Mail [class="Slack"] scratchpad show, resize set 1900 1100
+# bindsym XF86Mail [class="Slack"] scratchpad show, resize set 1900 1100
 
 # assign [class="^Mattermost$"] $workspace4
 for_window [class="^Mattermost$"] move scratchpad
-# bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
+bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
 # apple keyboard f13
-bindsym XF86Tools [class="Mattermost"] scratchpad show, resize set 1900 1100
+# bindsym XF86Tools [class="Mattermost"] scratchpad show, resize set 1900 1100
+
+for_window [class="Thunar"] floating enable
+for_window [class="Thunar"] move scratchpad
+
+
+# SCOPE FOR SCRATCHPAD
+mode "quick_scratchpad" {
+
+    bindsym 1 [title="^quick"] scratchpad show, resize set 1900 1100
+    bindsym Mod1+1 exec --no-startup-id terminator --title="quick"
+
+    bindsym 2 [class="^Thunar"] scratchpad show, resize set 1200 800
+    bindsym Mod1+2 exec --no-startup-id thunar
+
+    bindsym 3 [title="^secondquick"] scratchpad show, resize set 1900 1100
+    bindsym Mod1+3 exec --no-startup-id terminator --title="secondquick"
+
+    bindsym 4 [class="^Steam"] scratchpad show, resize set 1900 1100
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym Ctrl+q mode "quick_scratchpad"
 
 for_window [class="^Xfce4-appfinder$"] floating enable
 for_window [class="^Shutter$"] floating enable
@@ -261,7 +295,6 @@ assign [class="UE4Editor"] $workspace7
 for_window [class="UE4Editor"] layout tabbed
 for_window [class="UE4Editor"] move to workspace $workspace7 
 assign [class="^QtCreator$"] $workspace8
-# for_window [class="Thunar"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -279,10 +312,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
