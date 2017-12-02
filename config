@@ -372,12 +372,32 @@ exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
+# # dark blue
+# set $color1 #1E2831
+# # light blue
+# set $color2 #008FFF
+# # grey
+# set $color3 #888888
+# # orange
+# set $color4 #FF4040
+# set $white #FFFFFF
+
+# dark blue
+set $color1 #1E2831
+# light blue
+set $color2 #008FFF
+# grey
+set $color3 #888888
+# orange
+set $color4 #FF4040
+set $white #FFFFFF
+
 # Theme
-client.focused          #008FFF #1E2831 #008FFF #1E2831   #1E2831
-client.focused_inactive #888888 #1E2831 #888888 #1E2831   #1E2831
-client.unfocused        #888888 #1E2831 #888888 #1E2831   #1E2831
-client.urgent           #1E2831 #1E2831 #FF4040 #1E2831   #1E2831
-client.placeholder      #1E2831 #1E2831 #FFFFFF #1E2831   #1E2831
+client.focused          $color2 $color1 $color2 $color1   $color1
+client.focused_inactive $color3 $color1 $color3 $color1   $color1
+client.unfocused        $color3 $color1 $color3 $color1   $color1
+client.urgent           $color1 $color1 $color4 $color1   $color1
+client.placeholder      $color1 $color1 $white $color1   $color1
 
 client.background #FFFFFF
 
@@ -393,7 +413,8 @@ bar {
         # strip_workspace_numbers yes
         colors {
             separator #268bd2
-            background #263238
+            # background #263238
+            background #212121
             statusline #008FFF
             focused_workspace #03A9F4 #2196F3 #FAFAFA
             active_workspace #03A9F4 #283593 #03A9F4
