@@ -336,9 +336,9 @@ bindsym $mod+r mode "resize"
 
 # game mode
 mode "game" {
-  bindsym $mod+Escape mode "default"
+    bindsym $mod+Escape mode "default"
 }
-bindsym $mod+Escape
+bindsym $mod+Escape mode "game"
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
