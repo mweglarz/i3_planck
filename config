@@ -372,16 +372,6 @@ exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
-# # dark blue
-# set $color1 #1E2831
-# # light blue
-# set $color2 #008FFF
-# # grey
-# set $color3 #888888
-# # orange
-# set $color4 #FF4040
-# set $white #FFFFFF
-
 # dark blue
 set $color1 #1E2831
 # light blue
@@ -416,10 +406,10 @@ bar {
             # background #263238
             background #212121
             statusline #008FFF
-            focused_workspace #03A9F4 #2196F3 #FAFAFA
-            active_workspace #03A9F4 #283593 #03A9F4
-            inactive_workspace #002b36 #586e75 #002b36
-            urgent_workspace #d33682 #d33682 #fdf6e3
+            focused_workspace  #000000 #000000 #FFFFFF
+            active_workspace   #252525 #252525 #EEEEEE
+            inactive_workspace #404040 #404040 #AAAAAA
+            urgent_workspace   #FFFF1A #900000 #FFFFFF
+            binding_mode       #FFFF1A #900000 #FFFFFF
         }
-
 }
