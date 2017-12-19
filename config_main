@@ -115,7 +115,8 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # border
-new_window normal 6
+# new_window normal 6
+new_window none
 hide_edge_borders smart
 
 set $workspace1 "1L"
