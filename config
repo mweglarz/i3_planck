@@ -126,8 +126,8 @@ hide_edge_borders smart
 for_window [class="^.*"] border pixel 0
 
 # gaps
-gaps inner 12
-gaps outer 2
+# gaps inner 12
+# gaps outer 2
 
 set $workspace1 "1L"
 set $workspace2 "2L"
