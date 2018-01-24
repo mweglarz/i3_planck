@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+import os
+from random import random
+import subprocess
+from sys import argv
+
+STEP = '6%'
+
+def handle(button, sink):
+    # 3 - right button
+    # 4 - scroll up
+    # 5 - scroll down
+    sign = None
+    if button == '4':
+        sign = '+'
+    elif button == '5':
+        sign = '-'
+
+    if sign is not None:
+        command = ['pactl', 'set-sink-volume', sink, '{}{}'.format(sign, STEP)]
+        subprocess.run(command)
+
+def main(sink):
+    button = os.environ['BLOCK_BUTTON']
+
+    if button:
+        handle(button, sink)
+
+    # get volume percents
+    output = "%.2f" % random()
+    print(output)
+
+if __name__ == '__main__':
+    if len(argv) == 2:
+        main(argv[1])
