@@ -4,6 +4,7 @@ import os
 from random import random
 import subprocess
 from sys import argv
+from VolumeProvider import VolumeProvider
 
 STEP = '6%'
 
@@ -22,15 +23,23 @@ def handle(button, sink):
         subprocess.run(command)
 
 def main(sink):
-    button = os.environ['BLOCK_BUTTON']
+    provider = VolumeProvider(sink)
+    
+    button = None
+    try:
+        button = os.environ['BLOCK_BUTTON']
+    except:
+        button = None
 
     if button:
         handle(button, sink)
 
     # get volume percents
-    output = "%.2f" % random()
+    output = provider.get_volume()
     print(output)
 
 if __name__ == '__main__':
     if len(argv) == 2:
         main(argv[1])
+
+
