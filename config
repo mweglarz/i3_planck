@@ -391,7 +391,7 @@ exec --no-startup-id . /home/marcin/bin/mw_start_conky_right.sh
 
 exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock'
 # Wallpaper
-exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
+exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_3.jpg
 
 # dark blue
 set $color1 #1E2831
