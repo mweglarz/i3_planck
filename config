@@ -110,7 +110,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym Shift+space+f focus mode_toggle
+bindsym $mod+Shift+f focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -119,8 +119,8 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # border
-# new_window normal 6
-new_window none
+new_window normal 6
+# new_window none
 new_float normal 6
 hide_edge_borders smart
 for_window [class="^.*"] border pixel 0
