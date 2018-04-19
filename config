@@ -119,8 +119,8 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # border
-new_window normal 6
-# new_window none
+# new_window normal 6
+new_window none
 new_float normal 6
 hide_edge_borders smart
 for_window [class="^.*"] border pixel 0
@@ -258,6 +258,8 @@ bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 19
 # genius keyboard homepage (glob)
 # bindsym XF86HomePage [class="Spotify"] scratchpad show, resize set 1900 1100
 
+assign [class="^Mailspring$"] $workspace10
+
 assign [class="^Evolution$"] $workRight1
 # for_window [class="^Evolution$"] move scratchpad
 # bindsym Ctrl+Mod4+XF86TouchpadToggle [class="Evolution"] scratchpad show
@@ -381,7 +383,8 @@ exec --no-startup-id xrandr --output HDMI-0 --primary
 # exec --no-startup-id mattermost-desktop
 # exec --no-startup-id ssh-agent
 # exec --no-startup-id xfce4-power-manager
-exec --no-startup-id evolution
+exec --no-startup-id mailspring
+exec --no-startup-id evolution -c calendar --online
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
@@ -391,7 +394,7 @@ exec --no-startup-id . /home/marcin/bin/mw_start_conky_right.sh
 
 exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock'
 # Wallpaper
-exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_3.jpg
+exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
 # dark blue
 set $color1 #1E2831
