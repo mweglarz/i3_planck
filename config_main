@@ -260,7 +260,8 @@ bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 19
 
 assign [class="^Mailspring$"] $workspace10
 
-assign [class="^Evolution$"] $workRight1
+# assign [class="^Evolution$"] $workRight1
+assign [class="^Gnome-calendar$"] $workRight1
 # for_window [class="^Evolution$"] move scratchpad
 # bindsym Ctrl+Mod4+XF86TouchpadToggle [class="Evolution"] scratchpad show
 
@@ -384,7 +385,8 @@ exec --no-startup-id xrandr --output HDMI-0 --primary
 # exec --no-startup-id ssh-agent
 # exec --no-startup-id xfce4-power-manager
 exec --no-startup-id mailspring
-exec --no-startup-id evolution -c calendar --online
+exec --no-startup-id gnome-calendar
+# exec --no-startup-id evolution -c calendar --online
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
