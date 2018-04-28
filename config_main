@@ -115,11 +115,11 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # border
-# new_window normal 6
-new_window none
+new_window normal 6
+# new_window none
 new_float normal 6
 hide_edge_borders smart
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 0
 
 # gaps
 gaps inner 12
