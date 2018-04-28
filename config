@@ -232,23 +232,21 @@ bindsym Ctrl+Shift+9 move container to workspace $workRight5
 # SCRATCHPAD
 # quick terminal
 exec --no-startup-id terminator --title="quick"
-for_window [title="quick"] floating enable
-for_window [title="quick"] move scratchpad
-bindsym XF86HomePage [title="^quick"] scratchpad show, resize set 1900 1100
-bindsym Ctrl+F8 exec --no-startup-id terminator --title="quick"
+for_window [title="quick"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+bindsym XF86HomePage [title="^quick"] scratchpad show
 
 for_window [class="^Steam"] move scratchpad
 
-for_window [class="^GitKraken$"] move scratchpad
-bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show, resize set 1900 1100
+for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show
 # apple keyboard f15
 # bindsym XF86Launch6 [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 # genius keyboard search
 # bindsym XF86Search [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 
 
-for_window [class="^Spotify$"] move scratchpad
-bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show, resize set 1900 1100
+for_window [class="^Spotify$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show
 # apple keyboard f16
 # bindsym XF86Launch7 [class="Spotify"] scratchpad show, resize set 1900 1100
 # genius keyboard homepage (glob)
@@ -281,8 +279,8 @@ for_window [class="Thunar"] move scratchpad
 # SCOPE FOR SCRATCHPAD
 mode "quick_scratchpad" {
 
-    bindsym 1 [title="^quick"] scratchpad show, resize set 1900 1100
-    bindsym Mod1+1 exec --no-startup-id terminator --title="quick"
+    bindsym 1 [title="^quick"] scratchpad show
+    bindsym Mod1+1 exec --no-startup-id terminator --title="quick", resize set 1900 1100, move to position 20 px 20 px
 
     bindsym 2 [class="^Thunar"] scratchpad show, resize set 1200 800
     bindsym Mod1+2 exec --no-startup-id thunar
