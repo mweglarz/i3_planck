@@ -41,7 +41,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+space exec "rofi -modi run,drun,window,ssh -show run -lines 6"
+bindsym $mod+space exec "rofi -theme onedark -matching fuzzy -m -1 -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
 
 ### END OF BASIC COMMANDS
 
