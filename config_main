@@ -41,7 +41,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+space exec "rofi -theme onedark -matching fuzzy -m -1 -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
+bindsym $mod+space exec "rofi -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
 
 ### END OF BASIC COMMANDS
 
@@ -57,11 +57,7 @@ bindsym Ctrl+$mod+space exec xfce4-appfinder
 bindsym Mod1+Tab \
   exec rofi \
   -show window -hide-scrollbar true  \
-  -line-margin 0 -lines 20 -eh 1 -width 40 -bw 3 \
-  -bg        "#222222"  -fg        "#2ECC71" \
-  -hlbg      "#2ECC71"  -hlfg      "#222222" \
-  -bg-active "#222222"  -fg-active "#2288DD" \
-  -font      "Roboto Slab 12"   -opactiy 80
+  -line-margin 0 -lines 20 -eh 1 -bw 3
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -356,7 +352,7 @@ mode "game" {
     # kill focused window
     bindsym $mod+Shift+q kill
 
-    bindsym $mod+space exec rofi -show run -lines 6
+    bindsym $mod+space exec "rofi -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
 
     ### END OF BASIC COMMANDS
 
