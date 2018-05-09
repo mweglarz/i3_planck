@@ -394,7 +394,7 @@ set $black #000000
 set $orange #E65100
 
 # Theme                 border  bg      text    indicator child_border
-client.focused          $orange $color1 $white $color1   $color3
+client.focused          $color3 $color1 $white $color1   $orange
 client.focused_inactive $color1 $color1 $color3 $color1   $color1
 client.unfocused        $color1 $color1 $color3 $color1   $color1
 client.urgent           $color1 $color1 $color4 $color1   $color1
