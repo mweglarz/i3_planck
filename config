@@ -113,23 +113,23 @@ gaps inner 8
 # gaps outer 2
 smart_gaps on
 
-set $workspace1 "1L"
+set $workspace1 "1:web"
 set $workspace2 "2L"
 set $workspace3 "3L"
 set $workspace4 "4L"
 # set $workspace5 "5"
 # set $workspace6 "6"
-set $workspace7 "1R"
-set $workspace8 "2R"
+set $workspace7 "1:code"
+set $workspace8 "2:term"
 set $workspace9 "3R"
-set $workspace10 "4R"
+set $workspace10 "4:mail"
 
 set $workLeft1 "5L"
 set $workLeft2 "6L"
 set $workLeft3 "7L"
 set $workLeft4 "8L"
 set $workLeft5 "9L"
-set $workRight1 "5R"
+set $workRight1 "5:calendar"
 set $workRight2 "6R"
 set $workRight3 "7R"
 set $workRight4 "8R"
@@ -379,6 +379,8 @@ exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
+exec_always --no-startup-id /home/marcin/.config/polybar/launch.sh
+
 # dark blue
 set $color1 #1E2831
 # light blue
@@ -389,9 +391,10 @@ set $color3 #888888
 set $color4 #FF4040
 set $white #FFFFFF
 set $black #000000
+set $orange #E65100
 
 # Theme                 border  bg      text    indicator child_border
-client.focused          $color3 $color1 $white $color1   $color3
+client.focused          $orange $color1 $white $color1   $color3
 client.focused_inactive $color1 $color1 $color3 $color1   $color1
 client.unfocused        $color1 $color1 $color3 $color1   $color1
 client.urgent           $color1 $color1 $color4 $color1   $color1
@@ -401,23 +404,23 @@ client.background #FFFFFF
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        # status_command i3status
-        # font pango:Source Sans Pro-10 10
-        font pango:DejaVu Sans Mono, FontAwesome 10
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        tray_output HDMI-0
-        # strip_workspace_numbers yes
-        colors {
-            separator #268bd2
-            # background #263238
-            background #212121
-            statusline #008FFF
-            focused_workspace  #000000 #000000 #FFFFFF
-            active_workspace   #252525 #252525 #EEEEEE
-            inactive_workspace #404040 #404040 #AAAAAA
-            urgent_workspace   #FFFF1A #900000 #FFFFFF
-            binding_mode       #FFFF1A #900000 #FFFFFF
-        }
-}
+# bar {
+#         position top
+#         # status_command i3status
+#         # font pango:Source Sans Pro-10 10
+#         font pango:DejaVu Sans Mono, FontAwesome 10
+#         status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#         tray_output HDMI-0
+#         # strip_workspace_numbers yes
+#         colors {
+#             separator #268bd2
+#             # background #263238
+#             background #212121
+#             statusline #008FFF
+#             focused_workspace  #000000 #000000 #FFFFFF
+#             active_workspace   #252525 #252525 #EEEEEE
+#             inactive_workspace #404040 #404040 #AAAAAA
+#             urgent_workspace   #FFFF1A #900000 #FFFFFF
+#             binding_mode       #FFFF1A #900000 #FFFFFF
+#         }
+# }
