@@ -218,7 +218,8 @@ bindsym Ctrl+Shift+9 move container to workspace $workRight5
 
 # SCRATCHPAD
 # quick terminal
-exec --no-startup-id terminator --title="quick"
+# exec --no-startup-id terminator --title="quick"
+exec --no-startup-id xfce4-terminal --title="quick"
 for_window [title="quick"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
 bindsym XF86HomePage [title="^quick"] scratchpad show
 
@@ -267,13 +268,14 @@ for_window [class="Thunar"] move scratchpad
 mode "quick_scratchpad" {
 
     bindsym 1 [title="^quick"] scratchpad show
-    bindsym Mod1+1 exec --no-startup-id terminator --title="quick", resize set 1900 1100, move to position 20 px 20 px
+    #bindsym Mod1+1 exec --no-startup-id terminator --title="quick", resize set 1900 1100, move to position 20 px 20 px
+    bindsym Mod1+1 exec --no-startup-id xfce4-terminal --title="quick", resize set 1900 1100, move to position 20 px 20 px
 
     bindsym 2 [class="^Thunar"] scratchpad show, resize set 1200 800
     bindsym Mod1+2 exec --no-startup-id thunar
 
     bindsym 3 [title="^secondquick"] scratchpad show, resize set 1900 1100
-    bindsym Mod1+3 exec --no-startup-id terminator --title="secondquick"
+    bindsym Mod1+3 exec --no-startup-id xfce4-terminal --title="secondquick"
 
     bindsym 4 [class="^Steam"] scratchpad show, resize set 1900 1100
 
