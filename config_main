@@ -36,7 +36,7 @@ floating_modifier $mod
 
 ### BASIC COMMANDS ###
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -219,7 +219,7 @@ bindsym Ctrl+Shift+9 move container to workspace $workRight5
 # SCRATCHPAD
 # quick terminal
 # exec --no-startup-id terminator --title="quick"
-exec --no-startup-id xfce4-terminal --title="mwquick"
+exec --no-startup-id alacritty --title="mwquick"
 for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
 bindsym XF86HomePage [title="^mwquick"] scratchpad show
 
@@ -269,13 +269,13 @@ mode "quick_scratchpad" {
 
     bindsym 1 [title="^mwquick"] scratchpad show
     #bindsym Mod1+1 exec --no-startup-id terminator --title="quick", resize set 1900 1100, move to position 20 px 20 px
-    bindsym Mod1+1 exec --no-startup-id xfce4-terminal --title="mwquick", resize set 1900 1100, move to position 20 px 20 px
+    bindsym Mod1+1 exec --no-startup-id alacritty --title="mwquick", resize set 1900 1100, move to position 20 px 20 px
 
     bindsym 2 [class="^Thunar"] scratchpad show, resize set 1200 800
     bindsym Mod1+2 exec --no-startup-id thunar
 
     bindsym 3 [title="^secondquick"] scratchpad show, resize set 1900 1100
-    bindsym Mod1+3 exec --no-startup-id xfce4-terminal --title="secondquick"
+    bindsym Mod1+3 exec --no-startup-id alacritty --title="secondquick"
 
     bindsym 4 [class="^Steam"] scratchpad show, resize set 1900 1100
 
