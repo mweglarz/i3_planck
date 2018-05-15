@@ -220,8 +220,8 @@ bindsym Ctrl+Shift+9 move container to workspace $workRight5
 # quick terminal
 # exec --no-startup-id terminator --title="quick"
 exec --no-startup-id alacritty --title="mwquick"
-for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
-bindsym XF86HomePage [title="^mwquick"] scratchpad show
+for_window [class="^mwquick"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+bindsym XF86HomePage [class="^mwquick"] scratchpad show
 
 for_window [class="^Steam"] move scratchpad
 
