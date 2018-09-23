@@ -224,6 +224,8 @@ for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1900 
 bindsym XF86HomePage [title="^mwquick"] scratchpad show
 
 # for_window [class="^Steam"] move scratchpad
+for_window [class="^PomoDoneApp"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+bindsym Shift+Mod4+XF86TouchpadToggle [class="^PomoDoneApp"] scratchpad show, resize set 1900 1100
 
 for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
 bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show
@@ -257,7 +259,7 @@ bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set
 
 # assign [class="^Mattermost$"] $workspace4
 for_window [class="^Mattermost$"] move scratchpad
-bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
+# bindsym Shift+Mod4+XF86TouchpadToggle [class="Mattermost"] scratchpad show, resize set 1900 1100
 # apple keyboard f13
 # bindsym XF86Tools [class="Mattermost"] scratchpad show, resize set 1900 1100
 
