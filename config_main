@@ -206,29 +206,39 @@ bindsym Ctrl+Shift+9 move container to workspace $workRight5
 
 # bindsym --whole-window button8 workspace next_on_output
 # xprop to get class name
-# Microsoft Ergonomic Sculpt extra keys
-# F1 - XF86HomePage
-# F2 - Super_L + Tab
-# F3 - Control_L + Super_L + Left
-# F4 - Control_L + Super_L + Right
-# F5 - Shift_L + Super_L + XF86TouchpadToggle
-# F6 - Alt_L + Super_L + XF86TouchpadToggle
-# F7 - Control_L + Super_L + XF86TouchpadToggle
-# F8 - Super_L + XF86TouchpadToggle
+# Microsoft Ergonomic Sculpt & Mechanical 530
+# F1 - XF86HomePage & XF86Explorer
+# F2 - Super_L + Tab & XF86HomePage
+# F3 - Control_L + Super_L + Left & XF86Calculator
+# F4 - Control_L + Super_L + Right & XF86Tools
+# F5 - Shift_L + Super_L + XF86TouchpadToggle & -
+# F6 - Alt_L + Super_L + XF86TouchpadToggle & -
+# F7 - Control_L + Super_L + XF86TouchpadToggle & -
+# F8 - Super_L + XF86TouchpadToggle & -
+
+for_window [class="*exile*"] floating enable, resize set 1920 1080
 
 # SCRATCHPAD
+bindsym Shift+Mod4+s move scratchpad
 # quick terminal
 # exec --no-startup-id terminator --title="quick"
 exec --no-startup-id xfce4-terminal --title="mwquick"
 for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
-bindsym XF86HomePage [title="^mwquick"] scratchpad show
+## ergo
+# bindsym XF86HomePage [title="^mwquick"] scratchpad show
+## mechanical
+bindsym XF86Explorer [title="^mwquick"] scratchpad show
 
-# for_window [class="^Steam"] move scratchpad
 for_window [class="^PomoDoneApp"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
-bindsym Shift+Mod4+XF86TouchpadToggle [class="^PomoDoneApp"] scratchpad show, resize set 1900 1100
+## ergo
+# bindsym Shift+Mod4+XF86TouchpadToggle [class="^PomoDoneApp"] scratchpad show, resize set 1900 1100
+## mechanical
+bindsym XF86Calculator [class="^PomoDoneApp"] scratchpad show, resize set 1900 1100
+
 
 for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
-bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show
+## ergo
+# bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show
 # apple keyboard f15
 # bindsym XF86Launch6 [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 # genius keyboard search
@@ -236,7 +246,10 @@ bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show
 
 
 for_window [class="^Spotify$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
-bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show
+## ergo
+# bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show
+## mechanical
+bindsym XF86Tools [class="Spotify"] scratchpad show
 # apple keyboard f16
 # bindsym XF86Launch7 [class="Spotify"] scratchpad show, resize set 1900 1100
 # genius keyboard homepage (glob)
@@ -251,11 +264,14 @@ assign [class="^Google-chrome$"] $workRight1
 
 # assign [class="^Slack$"] $workspace4
 for_window [class="^Slack$"] move scratchpad
-bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
+# ergo
+# bindsym Mod1+Mod4+XF86TouchpadToggle [class="Slack"] scratchpad show, resize set 1900 1100
 # apple keyboard f14
 # bindsym XF86Launch5 [class="Slack"] scratchpad show, resize set 1900 1100
 # genius keyboard mail 
 # bindsym XF86Mail [class="Slack"] scratchpad show, resize set 1900 1100
+# mechanical
+bindsym XF86HomePage [class="Slack"] scratchpad show, resize set 1900 1100
 
 # assign [class="^Mattermost$"] $workspace4
 for_window [class="^Mattermost$"] move scratchpad
@@ -264,7 +280,7 @@ for_window [class="^Mattermost$"] move scratchpad
 # bindsym XF86Tools [class="Mattermost"] scratchpad show, resize set 1900 1100
 
 for_window [class="Thunar"] floating enable
-for_window [class="Thunar"] move scratchpad
+# for_window [class="Thunar"] move scratchpad
 
 # SCOPE FOR SCRATCHPAD
 mode "quick_scratchpad" {
