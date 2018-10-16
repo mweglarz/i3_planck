@@ -357,14 +357,12 @@ mode "game" {
 
     bindsym $mod+space exec "rofi -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
 
-    for_window [class="Wine"] floating enable, resize set 1900 1200, move to position 10 px 20 px
-
     ### END OF BASIC COMMANDS
 
     bindsym $mod+Escape mode "default"
 }
 bindsym $mod+Escape mode "game"
-
+for_window [class="Wine"] floating enable, resize set 1900 1200, move to position 10 px 20 px
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
