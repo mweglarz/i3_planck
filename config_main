@@ -216,10 +216,8 @@ bindsym Ctrl+Shift+9 move container to workspace $workRight5
 # F7 - Control_L + Super_L + XF86TouchpadToggle & -
 # F8 - Super_L + XF86TouchpadToggle & -
 
-for_window [class="*exile*"] floating enable, resize set 1920 1080
-
 # SCRATCHPAD
-bindsym Shift+Mod4+s move scratchpad
+bindsym $mod+Shift+s move scratchpad
 # quick terminal
 # exec --no-startup-id terminator --title="quick"
 exec --no-startup-id xfce4-terminal --title="mwquick"
@@ -359,11 +357,14 @@ mode "game" {
 
     bindsym $mod+space exec "rofi -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
 
+    for_window [class="Wine"] floating enable, resize set 1900 1200, move to position 10 px 20 px
+
     ### END OF BASIC COMMANDS
 
     bindsym $mod+Escape mode "default"
 }
 bindsym $mod+Escape mode "game"
+
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
