@@ -41,7 +41,7 @@ bindsym $mod+Return exec xfce4-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+space exec "rofi -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
+bindsym $mod+space exec "rofi -modi combi,window,ssh,en_to_pl:rofi-translate,pl_to_en:'rofi-translate -s pl' -show combi -combi-modi drun,run -lines 6"
 
 ### END OF BASIC COMMANDS
 
