@@ -41,7 +41,7 @@ bindsym $mod+Return exec xfce4-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+space exec "rofi -modi combi,window,ssh -show combi -combi-modi drun,run -lines 6"
+bindsym $mod+space exec "rofi -modi combi,window,ssh,en_to_pl:rofi-translate,pl_to_en:'rofi-translate -s pl' -show combi -combi-modi drun,run -lines 6"
 
 ### END OF BASIC COMMANDS
 
@@ -318,7 +318,22 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Ctrl+l exec /home/marcin/bin/mw_lock
+bindsym $mod+Ctrl+l exec /home/marcin/bin/mw_lock lock
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+
+mode "$mode_system" {
+    bindsym l exec --no-startup-id /home/marcin/bin/mw_lock lock, mode "default"
+    bindsym e exec --no-startup-id /home/marcin/bin/mw_lock logout, mode "default"
+    bindsym s exec --no-startup-id /home/marcin/bin/mw_lock suspend, mode "default"
+    bindsym r exec --no-startup-id /home/marcin/bin/mw_lock reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id /home/marcin/bin/mw_lock shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
