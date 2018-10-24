@@ -1,0 +1,39 @@
+#!/bin/sh
+
+lock() {
+    revert() {
+      xset dpms 0 0 0
+    }
+    trap revert HUP INT TERM
+    xset +dpms dpms 5 5 5
+    i3lock -c 000000 -n
+    revert
+}
+
+case "$1" in
+    lock)
+        lock
+        ;;
+
+    logout)
+        i3-mesg exit
+        ;;
+
+    suspend)
+        i3lock -c 000000 && systemctl suspend
+        ;;
+
+    reboot)
+        systemctl reboot
+        ;;
+
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "lock logout suspend reboot shutdown"
+        exit 2
+esac
+
+exit 0
+

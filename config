@@ -409,7 +409,8 @@ exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 exec --no-startup-id . /home/marcin/bin/mw_start_conky_right.sh
 
-exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock'
+exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock lock'
+exec --no-startup-id xautolock -time 60 -locker '/home/marcin/bin/mw_lock suspend'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
