@@ -233,6 +233,7 @@ for_window [class="^PomoDoneApp"] floating enable, move scratchpad, resize set 1
 ## mechanical
 bindsym XF86Calculator [class="^PomoDoneApp"] scratchpad show, resize set 1900 1100
 
+for_window [class="^Alarm-clock-applet"] floating enable, resize set 600 300, move to position 1300 px 30 px
 
 for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
 ## ergo
@@ -256,7 +257,7 @@ bindsym XF86Tools [class="Spotify"] scratchpad show
 assign [class="^Mailspring$"] $workspace10
 
 # assign [class="^Evolution$"] $workRight1
-assign [class="^Google-chrome$"] $workRight1
+assign [class="^MineTime$"] $workRight1
 # for_window [class="^Evolution$"] move scratchpad
 # bindsym Ctrl+Mod4+XF86TouchpadToggle [class="Evolution"] scratchpad show
 
@@ -400,7 +401,7 @@ exec --no-startup-id xrandr --output HDMI-0 --primary
 # exec --no-startup-id ssh-agent
 # exec --no-startup-id xfce4-power-manager
 exec --no-startup-id mailspring
-exec --no-startup-id google-chrome-stable https://calendar.google.com
+exec --no-startup-id minetime
 # exec --no-startup-id evolution -c calendar --online
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
@@ -410,7 +411,7 @@ exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 exec --no-startup-id . /home/marcin/bin/mw_start_conky_right.sh
 
 exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock lock'
-exec --no-startup-id xautolock -time 60 -locker '/home/marcin/bin/mw_lock suspend'
+# exec --no-startup-id xautolock -time 60 -locker '/home/marcin/bin/mw_lock suspend'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
