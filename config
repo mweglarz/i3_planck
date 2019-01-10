@@ -221,21 +221,21 @@ bindsym $mod+Shift+s move scratchpad
 # quick terminal
 # exec --no-startup-id terminator --title="quick"
 exec --no-startup-id xfce4-terminal --title="mwquick"
-for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1100 1100, move to position 10 px 20 px
 ## ergo
 # bindsym XF86HomePage [title="^mwquick"] scratchpad show
 ## mechanical
 bindsym XF86Explorer [title="^mwquick"] scratchpad show
 
-for_window [class="^PomoDoneApp"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+for_window [class="^PomoDoneApp"] floating enable, move scratchpad, resize set 1100 1100, move to position 10 px 20 px
 ## ergo
 # bindsym Shift+Mod4+XF86TouchpadToggle [class="^PomoDoneApp"] scratchpad show, resize set 1900 1100
 ## mechanical
-bindsym XF86Calculator [class="^PomoDoneApp"] scratchpad show, resize set 1900 1100
+bindsym XF86Calculator [class="^PomoDoneApp"] scratchpad show, resize set 1100 1100
 
 for_window [class="^Alarm-clock-applet"] floating enable, resize set 600 300, move to position 1300 px 30 px
 
-for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 1100 1100, move to position 10 px 20 px
 ## ergo
 # bindsym Ctrl+Mod4+XF86TouchpadToggle [class="^GitKraken$"] scratchpad show
 # apple keyboard f15
@@ -244,7 +244,7 @@ for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 19
 # bindsym XF86Search [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 
 
-for_window [class="^Spotify$"] floating enable, move scratchpad, resize set 1900 1100, move to position 10 px 20 px
+for_window [class="^Spotify$"] floating enable, move scratchpad, resize set 1100 1100, move to position 10 px 20 px
 ## ergo
 # bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show
 ## mechanical
@@ -270,7 +270,7 @@ for_window [class="^Slack$"] move scratchpad
 # genius keyboard mail 
 # bindsym XF86Mail [class="Slack"] scratchpad show, resize set 1900 1100
 # mechanical
-bindsym XF86HomePage [class="Slack"] scratchpad show, resize set 1900 1100
+bindsym XF86HomePage [class="Slack"] scratchpad show, resize set 1100 1100
 
 # assign [class="^Mattermost$"] $workspace4
 for_window [class="^Mattermost$"] move scratchpad
@@ -286,15 +286,15 @@ mode "quick_scratchpad" {
 
     bindsym 1 [title="^mwquick"] scratchpad show
     #bindsym Mod1+1 exec --no-startup-id terminator --title="quick", resize set 1900 1100, move to position 20 px 20 px
-    bindsym Mod1+1 exec --no-startup-id xfce4-terminal --title="mwquick", resize set 1900 1100, move to position 20 px 20 px
+    bindsym Mod1+1 exec --no-startup-id xfce4-terminal --title="mwquick", resize set 1100 1100, move to position 20 px 20 px
 
-    bindsym 2 [class="^Thunar"] scratchpad show, resize set 1200 800
+    bindsym 2 [class="^Thunar"] scratchpad show, resize set 1100 800
     bindsym Mod1+2 exec --no-startup-id thunar
 
-    bindsym 3 [class="^secondquick"] scratchpad show, resize set 1900 1100
+    bindsym 3 [class="^secondquick"] scratchpad show, resize set 1100 1100
     bindsym Mod1+3 exec --no-startup-id xfce4-terminal --title="secondquick"
 
-    bindsym 4 [class="^Steam"] scratchpad show, resize set 1900 1100
+    bindsym 4 [class="^Steam"] scratchpad show, resize set 1100 1100
 
     bindsym s move scratchpad
     bindsym h scratchpad show
