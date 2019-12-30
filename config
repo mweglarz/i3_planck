@@ -22,7 +22,7 @@ set $mod2 Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Source Code Pro for Powerline 9
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -286,6 +286,7 @@ bindsym XF86Tools [class="Spotify"] scratchpad show
 # bindsym XF86HomePage [class="Spotify"] scratchpad show, resize set 1900 1100
 
 assign [class="^Mailspring$"] $workspace10
+assign [class="^Thunderbird$"] $workspace10
 
 # assign [class="^Evolution$"] $workRight1
 assign [class="^MineTime$"] $workRight1
@@ -431,8 +432,9 @@ mouse_warping none
 # exec --no-startup-id mattermost-desktop
 # exec --no-startup-id ssh-agent
 # exec --no-startup-id xfce4-power-manager
-exec --no-startup-id mailspring
-exec --no-startup-id minetime
+# exec --no-startup-id mailspring
+# exec --no-startup-id minetime
+exec --no-startup-id thunderbird
 # exec --no-startup-id evolution -c calendar --online
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
@@ -441,7 +443,7 @@ exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 
 exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock lock'
-# exec --no-startup-id xautolock -time 60 -locker '/home/marcin/bin/mw_lock suspend'
+exec --no-startup-id xautolock -time 40 -locker '/home/marcin/bin/mw_lock suspend'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
