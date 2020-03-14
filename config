@@ -252,7 +252,7 @@ bindsym $mod+Shift+s move scratchpad
 # quick terminal
 # exec --no-startup-id terminator --title="quick"
 exec --no-startup-id xfce4-terminal --title="mwquick"
-for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1100 1100, move to position 40 px 400 px
+for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1100 1100 #, move to position 40 px 400 px
 ## ergo
 # bindsym XF86HomePage [title="^mwquick"] scratchpad show
 ## mechanical
@@ -275,7 +275,8 @@ for_window [class="^GitKraken$"] floating enable, move scratchpad, resize set 11
 # bindsym XF86Search [class="^GitKraken$"] scratchpad show, resize set 1900 1100
 
 
-for_window [class="^Spotify$"] floating enable, move scratchpad, resize set 1100 1100, move to position 40 px 400 px
+for_window [class="^Spotify$"] floating enable, move scratchpad, resize set 1100 1100
+#, move to position 40 px 400 px
 ## ergo
 # bindsym Mod4+XF86TouchpadToggle [class="Spotify"] scratchpad show
 ## mechanical
@@ -443,7 +444,7 @@ exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 
 exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock lock'
-exec --no-startup-id xautolock -time 40 -locker '/home/marcin/bin/mw_lock suspend'
+# exec --no-startup-id xautolock -time 30 locker '/home/marcin/bin/mw_lock suspend'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
 
