@@ -41,7 +41,7 @@ bindsym $mod+Return exec xfce4-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+space exec "rofi -modi combi,window -show combi -combi-modi drun,run -lines 10 -theme flat-orange"
+bindsym $mod+space exec "rofi -modi combi,window -show combi -combi-modi drun,run -lines 10"
 
 ### END OF BASIC COMMANDS
 
@@ -57,8 +57,7 @@ bindsym Ctrl+$mod+space exec xfce4-appfinder
 bindsym Mod1+Tab \
   exec rofi \
   -show window -hide-scrollbar true  \
-  -line-margin 0 -lines 20 -eh 1 -bw 3 \
-  -theme flat-orange
+  -line-margin 0 -lines 20 -eh 1 -bw 3
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -118,7 +117,7 @@ set $workspace1 "1:web"
 set $workspace2 "2:term"
 set $workspace3 "3:code"
 set $workspace4 "4"
-set $workspace5 "5"
+set $workspace5 "5:mail"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
@@ -166,11 +165,11 @@ bindsym Ctrl+3 workspace $workspace3
 bindsym Ctrl+4 workspace $workspace4
 bindsym Ctrl+5 workspace $workspace5
 
-bindsym Ctrl+$mod+6 workspace $workspace6
-bindsym Ctrl+$mod+7 workspace $workspace7
-bindsym Ctrl+$mod+8 workspace $workspace8
-bindsym Ctrl+$mod+9 workspace $workspace9
-bindsym Ctrl+$mod+0 workspace $workspace10
+bindsym Ctrl+$mod+1 workspace $workspace6
+bindsym Ctrl+$mod+2 workspace $workspace7
+bindsym Ctrl+$mod+3 workspace $workspace8
+bindsym Ctrl+$mod+4 workspace $workspace9
+bindsym Ctrl+$mod+5 workspace $workspace10
 
 mode "mv" {
     # move focused container to workspace
@@ -180,11 +179,11 @@ mode "mv" {
     bindsym Ctrl+4 move container to workspace $workspace4
     bindsym Ctrl+5 move container to workspace $workspace5
 
-    bindsym Ctrl+$mod+6 move container to workspace $workspace6
-    bindsym Ctrl+$mod+7 move container to workspace $workspace7
-    bindsym Ctrl+$mod+8 move container to workspace $workspace8
-    bindsym Ctrl+$mod+9 move container to workspace $workspace9
-    bindsym Ctrl+$mod+0 move container to workspace $workspace10
+    bindsym Ctrl+$mod+1 move container to workspace $workspace6
+    bindsym Ctrl+$mod+2 move container to workspace $workspace7
+    bindsym Ctrl+$mod+3 move container to workspace $workspace8
+    bindsym Ctrl+$mod+4 move container to workspace $workspace9
+    bindsym Ctrl+$mod+5 move container to workspace $workspace10
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -214,7 +213,7 @@ for_window [title="^mwquick"] floating enable, move scratchpad, resize set 1100 
 ## ergo
 # bindsym XF86HomePage [title="^mwquick"] scratchpad show
 ## mechanical
-bindsym XF86Explorer [title="^mwquick"] scratchpad show
+bindsym F1 [title="^mwquick"] scratchpad show
 
 #for_window [class="^PomoDoneApp"] floating enable, move scratchpad, resize set 1100 1100, move to position 40 px 400 px
 ## ergo
@@ -244,7 +243,7 @@ for_window [class="^Spotify$"] floating enable, move scratchpad, resize set 1100
 # genius keyboard homepage (glob)
 # bindsym XF86HomePage [class="Spotify"] scratchpad show, resize set 1900 1100
 
-assign [class="^Thunderbird$"] $workspace10
+assign [class="^Thunderbird$"] $workspace5
 
 # assign [class="^Evolution$"] $workRight1
 # for_window [class="^Evolution$"] move scratchpad
@@ -393,9 +392,9 @@ exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id xfce4-power-manager
 
-# exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
+exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 
-# exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock lock'
+exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock lock'
 # exec --no-startup-id xautolock -time 30 locker '/home/marcin/bin/mw_lock suspend'
 # Wallpaper
 exec feh --bg-fill /home/marcin/Pictures/wallpapers/manjaro_dark_2.png
