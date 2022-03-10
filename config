@@ -113,77 +113,52 @@ gaps inner 8
 # gaps outer 2
 smart_gaps on
 
-set $workspace1 "1:web"
-set $workspace2 "2:term"
-set $workspace3 "3:code"
-set $workspace4 "4"
-set $workspace5 "5:mail"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
+set $workspaceL1 "1-L"
+set $workspaceL2 "2-L"
+set $workspaceL3 "3-L"
+set $workspaceM1 "1-M"
+set $workspaceM2 "2-M"
+set $workspaceM3 "3-M"
+set $workspaceR1 "1-R"
+set $workspaceR2 "2-R"
+set $workspaceR3 "3-R"
 
-# set $workLeft1 "5L"
-# set $workLeft2 "6L"
-# set $workLeft3 "7L"
-# set $workLeft4 "8L"
-# set $workLeft5 "9L"
-# set $workRight1 "5:calendar"
-# set $workRight2 "6R"
-# set $workRight3 "7R"
-# set $workRight4 "8R"
-# set $workRight5 "9R"
-
-# workspace $workspace1 output DP-0
-# workspace $workspace2 output DP-0
-# workspace $workspace3 output DP-0
-# workspace $workspace4 output DP-0
-# workspace $workspace5 output DP-0
-
-# workspace $workLeft1 output DP-0
-# workspace $workLeft3 output DP-0
-# workspace $workLeft4 output DP-0
-# workspace $workLeft5 output DP-0
-
-# workspace $workspace6 output HDMI-0
-# workspace $workspace7 output HDMI-0
-# workspace $workspace8 output HDMI-0
-# workspace $workspace9 output HDMI-0
-# workspace $workspace10 output HDMI-0
-# 
-# workspace $workRight1 output HDMI-0
-# workspace $workRight2 output HDMI-0
-# workspace $workRight3 output HDMI-0
-# workspace $workRight4 output HDMI-0
-# workspace $workRight5 output HDMI-0
+workspace $workspaceL1 output HDMI-A-0
+workspace $workspaceL2 output HDMI-A-0
+workspace $workspaceL3 output HDMI-A-0
+workspace $workspaceM1 output DisplayPort-0
+workspace $workspaceM2 output DisplayPort-0
+workspace $workspaceM3 output DisplayPort-0
+workspace $workspaceR1 output eDP
+workspace $workspaceR2 output eDP
+workspace $workspaceR3 output eDP
 
 # switch to workspace
-bindsym Ctrl+1 workspace $workspace1
-bindsym Ctrl+2 workspace $workspace2
-bindsym Ctrl+3 workspace $workspace3
-bindsym Ctrl+4 workspace $workspace4
-bindsym Ctrl+5 workspace $workspace5
+bindsym Shift+Ctrl+1 workspace $workspaceL1
+bindsym Shift+Ctrl+2 workspace $workspaceL2
+bindsym Shift+Ctrl+3 workspace $workspaceL3
 
-bindsym Ctrl+$mod+1 workspace $workspace6
-bindsym Ctrl+$mod+2 workspace $workspace7
-bindsym Ctrl+$mod+3 workspace $workspace8
-bindsym Ctrl+$mod+4 workspace $workspace9
-bindsym Ctrl+$mod+5 workspace $workspace10
+bindsym Ctrl+1 workspace $workspaceL1
+bindsym Ctrl+2 workspace $workspaceL2
+bindsym Ctrl+3 workspace $workspaceL3
+
+bindsym Ctrl+$mod+1 workspace $workspaceL1
+bindsym Ctrl+$mod+2 workspace $workspaceL2
+bindsym Ctrl+$mod+3 workspace $workspaceL3
 
 mode "mv" {
     # move focused container to workspace
-    bindsym Ctrl+1 move container to workspace $workspace1
-    bindsym Ctrl+2 move container to workspace $workspace2
-    bindsym Ctrl+3 move container to workspace $workspace3
-    bindsym Ctrl+4 move container to workspace $workspace4
-    bindsym Ctrl+5 move container to workspace $workspace5
+    bindsym Shift+Ctrl+1 move container to workspace $workspaceL1
+    bindsym Shift+Ctrl+2 move container to workspace $workspaceL2
+    bindsym Shift+Ctrl+3 move container to workspace $workspaceL3
 
-    bindsym Ctrl+$mod+1 move container to workspace $workspace6
-    bindsym Ctrl+$mod+2 move container to workspace $workspace7
-    bindsym Ctrl+$mod+3 move container to workspace $workspace8
-    bindsym Ctrl+$mod+4 move container to workspace $workspace9
-    bindsym Ctrl+$mod+5 move container to workspace $workspace10
+    bindsym Ctrl+1 move container to workspace $workspaceM1
+    bindsym Ctrl+2 move container to workspace $workspaceM2
+    bindsym Ctrl+3 move container to workspace $workspaceM3
+
+    bindsym Ctrl+$mod+1 move container to workspace $workspaceR1
+    bindsym Ctrl+$mod+2 move container to workspace $workspaceR2
+    bindsym Ctrl+$mod+3 move container to workspace $workspaceR3
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -317,7 +292,7 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+0 mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
