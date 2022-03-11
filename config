@@ -138,13 +138,13 @@ bindsym Shift+Ctrl+1 workspace $workspaceL1
 bindsym Shift+Ctrl+2 workspace $workspaceL2
 bindsym Shift+Ctrl+3 workspace $workspaceL3
 
-bindsym Ctrl+1 workspace $workspaceL1
-bindsym Ctrl+2 workspace $workspaceL2
-bindsym Ctrl+3 workspace $workspaceL3
+bindsym Ctrl+1 workspace $workspaceM1
+bindsym Ctrl+2 workspace $workspaceM2
+bindsym Ctrl+3 workspace $workspaceM3
 
-bindsym Ctrl+$mod+1 workspace $workspaceL1
-bindsym Ctrl+$mod+2 workspace $workspaceL2
-bindsym Ctrl+$mod+3 workspace $workspaceL3
+bindsym Ctrl+$mod+1 workspace $workspaceR1
+bindsym Ctrl+$mod+2 workspace $workspaceR2
+bindsym Ctrl+$mod+3 workspace $workspaceR3
 
 mode "mv" {
     # move focused container to workspace
@@ -367,6 +367,7 @@ exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id xfce4-power-manager
 
+exec --no-startup-id . /home/marcin/.screenlayout/office.sh
 exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 
 exec --no-startup-id xautolock -time 10 -locker '/home/marcin/bin/mw_lock lock'
