@@ -367,7 +367,7 @@ exec --no-startup-id volumeicon
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id xfce4-power-manager
 
-exec --no-startup-id "sh -c 'sleep 1; . /home/marcin/.screenlayout/office.sh && . /home/marcin/bin/mw_start_conky.sh && . /home/marcin/.config/polybar/launch.sh'"
+exec --no-startup-id "sh -c 'sleep 10; . /home/marcin/.screenlayout/office.sh && . /home/marcin/bin/mw_start_conky.sh && . /home/marcin/.config/polybar/launch.sh'"
 # exec_always --no-startup-id . /home/marcin/.screenlayout/office.sh
 # exec --no-startup-id . /home/marcin/bin/mw_start_conky.sh
 # exec_always --no-startup-id /home/marcin/.config/polybar/launch.sh
