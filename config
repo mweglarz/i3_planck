@@ -140,10 +140,10 @@ workspace $workspaceR3 output eDP
 workspace $workspaceR4 output eDP
 
 # switch to workspace
-bindsym Shift+Ctrl+1 workspace $workspaceL1
-bindsym Shift+Ctrl+2 workspace $workspaceL2
-bindsym Shift+Ctrl+3 workspace $workspaceL3
-bindsym Shift+Ctrl+4 workspace $workspaceL4
+bindsym $mod+1 workspace $workspaceL1
+bindsym $mod+2 workspace $workspaceL2
+bindsym $mod+3 workspace $workspaceL3
+bindsym $mod+4 workspace $workspaceL4
 
 bindsym Ctrl+1 workspace $workspaceM1
 bindsym Ctrl+2 workspace $workspaceM2
@@ -157,10 +157,10 @@ bindsym Ctrl+$mod+4 workspace $workspaceR4
 
 mode "mv" {
     # move focused container to workspace
-    bindsym Shift+Ctrl+1 move container to workspace $workspaceL1
-    bindsym Shift+Ctrl+2 move container to workspace $workspaceL2
-    bindsym Shift+Ctrl+3 move container to workspace $workspaceL3
-    bindsym Shift+Ctrl+4 move container to workspace $workspaceL4
+    bindsym $mod+1 move container to workspace $workspaceL1
+    bindsym $mod+2 move container to workspace $workspaceL2
+    bindsym $mod+3 move container to workspace $workspaceL3
+    bindsym $mod+4 move container to workspace $workspaceL4
 
     bindsym Ctrl+1 move container to workspace $workspaceM1
     bindsym Ctrl+2 move container to workspace $workspaceM2
